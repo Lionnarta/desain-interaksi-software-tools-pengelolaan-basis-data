@@ -1,5 +1,5 @@
 const BasisData = () => {
-  return <div>Basis Data</div>;
+  return <div className="text-3xl">Basis Data</div>;
 };
 
 export default BasisData;
