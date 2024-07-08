@@ -1,4 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBook, faDatabase, faTable } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
   const location = useLocation();
@@ -9,22 +11,46 @@ const Navbar = () => {
         <div
           className={`text-2xl font-semibold ${
             location.pathname === "/" ? "bg-[#ECECEC]" : ""
-          } px-4 py-3 rounded-md mb-[10px]`}
+          } px-4 py-3 rounded-md mb-[10px] flex items-center`}
+          style={{
+            boxShadow: `${
+              location.pathname === "/"
+                ? "0px 5px 50px 5px rgba(0, 0, 0, 0.05)"
+                : ""
+            }`,
+          }}
         >
+          <FontAwesomeIcon icon={faDatabase} className="w-[20px] mr-[10px]" />
           <Link to="/">Basis Data</Link>
         </div>
         <div
           className={`text-2xl font-semibold ${
             location.pathname === "/tabel" ? "bg-[#ECECEC]" : ""
-          } px-4 py-3 rounded-md mb-[10px]`}
+          } px-4 py-3 rounded-md mb-[10px] flex items-center`}
+          style={{
+            boxShadow: `${
+              location.pathname === "/tabel"
+                ? "0px 5px 50px 5px rgba(0, 0, 0, 0.05)"
+                : ""
+            }`,
+          }}
         >
+          <FontAwesomeIcon icon={faTable} className="w-[20px] mr-[10px]" />
           <Link to="/tabel">Tabel</Link>
         </div>
         <div
           className={`text-2xl font-semibold ${
             location.pathname === "/dokumentasi" ? "bg-[#ECECEC]" : ""
-          } px-4 py-3 rounded-md mb-[10px]`}
+          } px-4 py-3 rounded-md mb-[10px] flex items-center`}
+          style={{
+            boxShadow: `${
+              location.pathname === "/dokumentasi"
+                ? "0px 5px 50px 5px rgba(0, 0, 0, 0.05)"
+                : ""
+            }`,
+          }}
         >
+          <FontAwesomeIcon icon={faBook} className="w-[20px] mr-[10px]" />
           <Link to="/dokumentasi">Dokumentasi</Link>
         </div>
       </div>
