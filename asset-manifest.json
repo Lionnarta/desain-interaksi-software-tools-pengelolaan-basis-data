@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/desain-interaksi-software-tools-pengelolaan-basis-data/static/css/main.ef31a19f.css",
-    "main.js": "/desain-interaksi-software-tools-pengelolaan-basis-data/static/js/main.9c77878c.js",
+    "main.css": "/desain-interaksi-software-tools-pengelolaan-basis-data/static/css/main.842d60ad.css",
+    "main.js": "/desain-interaksi-software-tools-pengelolaan-basis-data/static/js/main.18792056.js",
     "static/js/453.ab8df4c9.chunk.js": "/desain-interaksi-software-tools-pengelolaan-basis-data/static/js/453.ab8df4c9.chunk.js",
     "index.html": "/desain-interaksi-software-tools-pengelolaan-basis-data/index.html",
-    "main.ef31a19f.css.map": "/desain-interaksi-software-tools-pengelolaan-basis-data/static/css/main.ef31a19f.css.map",
-    "main.9c77878c.js.map": "/desain-interaksi-software-tools-pengelolaan-basis-data/static/js/main.9c77878c.js.map",
+    "main.842d60ad.css.map": "/desain-interaksi-software-tools-pengelolaan-basis-data/static/css/main.842d60ad.css.map",
+    "main.18792056.js.map": "/desain-interaksi-software-tools-pengelolaan-basis-data/static/js/main.18792056.js.map",
     "453.ab8df4c9.chunk.js.map": "/desain-interaksi-software-tools-pengelolaan-basis-data/static/js/453.ab8df4c9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ef31a19f.css",
-    "static/js/main.9c77878c.js"
+    "static/css/main.842d60ad.css",
+    "static/js/main.18792056.js"
   ]
 }
