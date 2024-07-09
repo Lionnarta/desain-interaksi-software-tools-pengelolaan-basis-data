@@ -115,6 +115,65 @@ const Dokumentasi = () => {
             <li>Klik tombol "Ya" pada konfirmasi untuk menghapus tabel</li>
           </ol>
         </div>
+        <div className="mb-[20px]">
+          <p className="text-xl font-semibold mb-[5px]">
+            Cara menambahkan data pada tabel
+          </p>
+          <ol className="list-decimal pl-[20px] text-lg">
+            <li>Klik "Tabel" pada menu navigasi</li>
+            <li>Klik salah satu nama tabel yang datanya akan ditambahkan</li>
+            <li>Klik tombol tanda tambah</li>
+            <li>Masukkan data pada kolom yang tersedia</li>
+            <li>Klik tombol "Tambah data"</li>
+          </ol>
+        </div>
+        <div className="mb-[20px]">
+          <p className="text-xl font-semibold mb-[5px]">
+            Cara membaca data pada tabel
+          </p>
+          <ol className="list-decimal pl-[20px] text-lg">
+            <li>Klik "Tabel" pada menu navigasi</li>
+            <li>Klik salah satu nama tabel yang datanya akan dilihat</li>
+            <li>Pengguna dapat melihat data pada tabel</li>
+          </ol>
+        </div>
+        <div className="mb-[20px]">
+          <p className="text-xl font-semibold mb-[5px]">
+            Cara mencari data menggunakan filter
+          </p>
+          <ol className="list-decimal pl-[20px] text-lg">
+            <li>Klik "Tabel" pada menu navigasi</li>
+            <li>Klik salah satu nama tabel yang datanya akan dilihat</li>
+            <li>
+              Masukkan informasi mengenai data yang akan dicari pada kolom cari
+              data
+            </li>
+            <li>Klik ikon kaca pembesar</li>
+          </ol>
+        </div>
+        <div className="mb-[20px]">
+          <p className="text-xl font-semibold mb-[5px]">
+            Cara mengubah data pada tabel
+          </p>
+          <ol className="list-decimal pl-[20px] text-lg">
+            <li>Klik "Tabel" pada menu navigasi</li>
+            <li>Klik salah satu nama tabel yang datanya akan diubah</li>
+            <li>Klik tombol "sunting" pada salah satu data</li>
+            <li>Pengguna mengubah data pada kolom yang tersedia</li>
+            <li>Klik tombol "Simpan"</li>
+          </ol>
+        </div>
+        <div className="mb-[20px]">
+          <p className="text-xl font-semibold mb-[5px]">
+            Cara menghapus data pada tabel
+          </p>
+          <ol className="list-decimal pl-[20px] text-lg">
+            <li>Klik "Tabel" pada menu navigasi</li>
+            <li>Klik salah satu nama tabel yang datanya akan dihapus</li>
+            <li>Klik tombol "hapus" pada salah satu data</li>
+            <li>Klik tombol "Ya" pada konfirmasi penghapusan data</li>
+          </ol>
+        </div>
       </ScrollDiv>
     </div>
   );

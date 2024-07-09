@@ -25,11 +25,11 @@ const Navbar = () => {
         </div>
         <div
           className={`text-2xl font-semibold ${
-            location.pathname === "/tabel" ? "bg-[#ECECEC]" : ""
+            location.pathname.substring(0, 6) === "/tabel" ? "bg-[#ECECEC]" : ""
           } px-4 py-3 rounded-md mb-[10px] flex items-center`}
           style={{
             boxShadow: `${
-              location.pathname === "/tabel"
+              location.pathname.substring(0, 6) === "/tabel"
                 ? "0px 5px 50px 5px rgba(0, 0, 0, 0.05)"
                 : ""
             }`,

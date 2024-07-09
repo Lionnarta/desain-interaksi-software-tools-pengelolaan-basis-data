@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Modal from "../components/Modal";
 import styled from "styled-components";
 import Tooltips from "../components/Tooltips";
@@ -31,7 +32,9 @@ const Tabel = () => {
     return (
       <>
         <tr>
-          <th className="px-6 py-1 font-normal">{namaTabel}</th>
+          <th className="px-6 py-1 font-normal">
+            <Link to={`/tabel/${namaTabel}`}>{namaTabel}</Link>
+          </th>
           <th className="px-6 py-1 font-normal text-center">{jumlahData}</th>
           <th className="px-6 py-1 font-normal flex gap-2">
             <p
@@ -171,7 +174,7 @@ const Tabel = () => {
       )}
 
       {/* FITUR MEMBUAT TABEL DAN EKSPOR */}
-      {!create && !ekspor && tabelAktif === "" && (
+      {basisData !== "-" && !create && !ekspor && tabelAktif === "" && (
         <div className="grid gap-y-4">
           <div
             className="w-[320px] justify-center flex items-center px-[15px] py-[10px] bg-[#D4D4D4] hover:bg-[#ECECEC] transition ease-in-out duration-150 rounded-lg cursor-pointer"
@@ -313,13 +316,9 @@ const Tabel = () => {
           <div
             className="w-[200px] justify-center flex items-center px-[15px] py-[10px] ml-auto mb-[70px] bg-[#D4D4D4] hover:bg-[#ECECEC] transition ease-in-out duration-150 rounded-lg cursor-pointer"
             style={{ boxShadow: "0px 5px 50px 5px rgba(0, 0, 0, 0.05)" }}
+            onClick={closeStrukturTabel}
           >
-            <p
-              className="text-xl font-medium mr-[10px]"
-              onClick={closeStrukturTabel}
-            >
-              Simpan
-            </p>
+            <p className="text-xl font-medium mr-[10px]">Simpan</p>
           </div>
           {data.length === 0 && (
             <p className="text-lg mb-[70px]">

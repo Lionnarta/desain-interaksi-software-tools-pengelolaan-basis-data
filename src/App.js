@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import BasisData from "./routes/BasisData";
 import Tabel from "./routes/Tabel";
 import Dokumentasi from "./routes/Dokumentasi";
+import DataTabel from "./routes/DataTabel";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<BasisData />} />
         <Route path="/tabel" element={<Tabel />} />
+        <Route path="/tabel/:namatabel" element={<DataTabel />} />
         <Route path="/dokumentasi" element={<Dokumentasi />} />
       </Routes>
     </div>
