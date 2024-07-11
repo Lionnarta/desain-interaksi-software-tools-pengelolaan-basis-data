@@ -144,20 +144,6 @@ const DataTabel = () => {
       <p className="text-3xl font-semibold mb-[30px]">
         Tabel: {param.namatabel}
       </p>
-      <div className="mb-[20px]">
-        <div className="flex items-center gap-x-2">
-          <input
-            type="text"
-            name="filter"
-            placeholder="Cari data"
-            className="w-[320px] text-base px-[15px] py-[10px] border border-black rounded-lg outline-none"
-          />
-          <FontAwesomeIcon
-            icon={faMagnifyingGlass}
-            className="w-[25px] h-[25px] cursor-pointer"
-          />
-        </div>
-      </div>
       {basisData !== "-" && (
         <>
           <ScrollDiv className="max-h-[320px] overflow-y-scroll pr-[20px] mb-[30px]">
