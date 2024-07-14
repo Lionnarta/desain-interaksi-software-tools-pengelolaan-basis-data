@@ -1,36 +1,51 @@
 export const listTabel = [
   {
     namatabel: "customer",
-    jumlahdata: 2,
-    struktur: [
-      { nama: "userid", tipe: "INT", panjang: 10 },
-      { nama: "nama", tipe: "VARCHAR", panjang: 10 },
-    ],
   },
   {
     namatabel: "user",
-    jumlahdata: 2,
-    struktur: [
-      { nama: "userid", tipe: "INT", panjang: 10 },
-      { nama: "nama", tipe: "VARCHAR", panjang: 10 },
-    ],
   },
   {
     namatabel: "product",
-    jumlahdata: 2,
-    struktur: [
-      { nama: "produkid", tipe: "INT", panjang: 10 },
-      { nama: "namaproduk", tipe: "VARCHAR", panjang: 10 },
-    ],
   },
   {
     namatabel: "transaction",
-    jumlahdata: 1,
-    struktur: [
-      { nama: "userid", tipe: "INT", panjang: 10 },
-      { nama: "nama", tipe: "VARCHAR", panjang: 10 },
-      { nama: "produkid", tipe: "INT", panjang: 10 },
-      { nama: "namaproduk", tipe: "VARCHAR", panjang: 10 },
-    ],
   },
 ];
+
+export const strukturTabel = {
+  customer: [
+    { nama: "userid", tipe: "INT", panjang: 10 },
+    { nama: "nama", tipe: "VARCHAR", panjang: 10 },
+  ],
+  user: [
+    { nama: "userid", tipe: "INT", panjang: 10 },
+    { nama: "nama", tipe: "VARCHAR", panjang: 10 },
+  ],
+  product: [
+    { nama: "produkid", tipe: "INT", panjang: 10 },
+    { nama: "namaproduk", tipe: "VARCHAR", panjang: 10 },
+  ],
+  transaction: [
+    { nama: "userid", tipe: "INT", panjang: 10 },
+    { nama: "nama", tipe: "VARCHAR", panjang: 10 },
+    { nama: "produkid", tipe: "INT", panjang: 10 },
+    { nama: "namaproduk", tipe: "VARCHAR", panjang: 10 },
+  ],
+};
+
+export const dataTabel = {
+  customer: [
+    { userid: 1, nama: "Lia" },
+    { userid: 2, nama: "Devin" },
+  ],
+  user: [
+    { userid: 1, nama: "Lia" },
+    { userid: 2, nama: "Devin" },
+  ],
+  product: [
+    { produkid: 1, namaproduk: "buku" },
+    { produkid: 2, namaproduk: "pulpen" },
+  ],
+  transaction: [{ userid: 1, nama: "Lia", produkid: 1, namaproduk: "buku" }],
+};
