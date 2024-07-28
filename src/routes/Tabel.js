@@ -2,8 +2,14 @@ import { useState } from "react";
 import Modal from "../components/Modal";
 import styled from "styled-components";
 import Tooltips from "../components/Tooltips";
+import toast, { Toaster } from "react-hot-toast";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleMinus, faCirclePlus } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCircleMinus,
+  faCirclePlus,
+  faTableColumns,
+  faTrashCan,
+} from "@fortawesome/free-solid-svg-icons";
 import { dataTabel, listTabel, strukturTabel } from "./Constant";
 import DataTabel from "./DataTabel";
 
@@ -84,6 +90,9 @@ const Tabel = () => {
     setDataStruktur(update);
     setTabelAktif("");
     setStrukturAktif([]);
+    toast.success("Berhasil menyimpan atribut tabel", {
+      position: "top-right",
+    });
   };
 
   const tambahKolom = () => {
@@ -93,12 +102,18 @@ const Tabel = () => {
       panjang: "",
     });
     setStrukturAktif(newStruktur);
+    toast.success("Berhasil menambahkan kolom atribut", {
+      position: "top-right",
+    });
   };
 
   const hapusKolom = (index) => {
     const newStruktur = strukturAktif.filter((_, idx) => idx !== index);
     setStrukturAktif(newStruktur);
     closeModal2();
+    toast.success("Berhasil menghapus kolom atribut", {
+      position: "top-right",
+    });
   };
 
   const updateKolom = (e, idx) => {
@@ -113,6 +128,9 @@ const Tabel = () => {
     const newData = data.filter((data) => data.namatabel !== namaTabel);
     setData(newData);
     closeModal();
+    toast.success("Berhasil menghapus tabel", {
+      position: "top-right",
+    });
   };
 
   // Row Tabel
@@ -122,7 +140,7 @@ const Tabel = () => {
         <tr>
           <th className="px-6 py-1 font-normal">
             <p
-              className="cursor-pointer"
+              className="cursor-pointer font-semibold hover:underline"
               onClick={() => openDaftarData(namaTabel)}
             >
               {namaTabel}
@@ -132,18 +150,20 @@ const Tabel = () => {
             {dataSemuaTabel[namaTabel].length}
           </th>
           <th className="px-6 py-1 font-normal flex gap-2">
-            <p
-              className="italic cursor-pointer"
+            <div
+              className="flex items-center hover:underline cursor-pointer"
               onClick={() => openStrukturTabel(namaTabel)}
             >
-              struktur
-            </p>
-            <p
-              className="italic cursor-pointer"
+              <FontAwesomeIcon className="mr-[5px]" icon={faTableColumns} />
+              <p className="italic text-blue-800 font-medium">atribut</p>
+            </div>
+            <div
+              className="flex items-center hover:underline cursor-pointer"
               onClick={() => openModal(namaTabel)}
             >
-              hapus
-            </p>
+              <FontAwesomeIcon className="mr-[5px]" icon={faTrashCan} />
+              <p className="italic text-blue-800 font-medium">hapus</p>
+            </div>
           </th>
         </tr>
       </>
@@ -163,13 +183,24 @@ const Tabel = () => {
       setTabelAktif(namaTabelBaru);
       setStrukturAktif([{ nama: "", tipe: "", panjang: "" }]);
       setDataSemuaTabel({ ...dataSemuaTabel, [namaTabelBaru]: [] });
+      toast.success("Berhasil membuat tabel baru", {
+        position: "top-right",
+      });
     }
+  };
+
+  const eksporHandler = (event) => {
+    event.preventDefault();
+    setEkspor(false);
+    toast.success("Berhasil ekspor basis data", {
+      position: "top-right",
+    });
   };
 
   return (
     <>
       {!showData && (
-        <div className="px-10 py-16 font-poppins text-black">
+        <div className="px-10 py-16 ml-[300px] font-poppins text-black">
           <p className="text-3xl font-semibold mb-[30px]">
             Tabel{tabelAktif !== "" ? `: ${tabelAktif}` : ""}
           </p>
@@ -239,13 +270,18 @@ const Tabel = () => {
                             />
                           </th>
                           <th className="font-normal pb-[5px]">
-                            <input
-                              type="text"
+                            <select
                               name="tipe"
                               className="w-[150px] text-base mx-3 px-[15px] py-[10px] border border-black rounded-sm outline-none"
                               value={data.tipe}
                               onChange={(e) => updateKolom(e, idx)}
-                            />
+                            >
+                              <option value="INT">INT</option>
+                              <option value="CHAR">CHAR</option>
+                              <option value="VARCHAR">VARCHAR</option>
+                              <option value="BOOLEAN">BOOLEAN</option>
+                              <option value="DATE">DATE</option>
+                            </select>
                           </th>
                           <th className="font-normal pb-[5px]">
                             <input
@@ -295,29 +331,21 @@ const Tabel = () => {
           {/* FITUR MEMBUAT TABEL DAN EKSPOR */}
           {basisData !== "-" && !create && !ekspor && tabelAktif === "" && (
             <div className="grid gap-y-4">
-              <div
-                className="w-[320px] justify-center flex items-center px-[15px] py-[10px] bg-[#D4D4D4] hover:bg-[#ECECEC] transition ease-in-out duration-150 rounded-lg cursor-pointer"
-                style={{ boxShadow: "0px 5px 50px 5px rgba(0, 0, 0, 0.05)" }}
-                onClick={() => setCreate(true)}
-              >
-                <p className="text-xl font-medium mr-[10px]">
-                  Membuat tabel baru
-                </p>
+              <div onClick={() => setCreate(true)}>
                 <Tooltips
                   text={"Membuat tabel baru pada basis data yang terhubung"}
-                ></Tooltips>
+                >
+                  <p className="text-xl font-medium mr-[15px]">
+                    Membuat tabel baru
+                  </p>
+                </Tooltips>
               </div>
-              <div
-                className="w-[320px] justify-center flex items-center px-[15px] py-[10px] bg-[#D4D4D4] hover:bg-[#ECECEC] transition ease-in-out duration-150 rounded-lg cursor-pointer"
-                style={{ boxShadow: "0px 5px 50px 5px rgba(0, 0, 0, 0.05)" }}
-                onClick={() => setEkspor(true)}
-              >
-                <p className="text-xl font-medium mr-[10px]">
-                  Ekspor basis data
-                </p>
-                <Tooltips
-                  text={"Ekspor file basis data dengan ektensi *.db"}
-                ></Tooltips>
+              <div onClick={() => setEkspor(true)}>
+                <Tooltips text={"Ekspor file basis data dengan ektensi *.db"}>
+                  <p className="text-xl font-medium mr-[15px]">
+                    Ekspor basis data
+                  </p>
+                </Tooltips>
               </div>
             </div>
           )}
@@ -355,7 +383,7 @@ const Tabel = () => {
           {/* EKSPOR */}
           {!create && ekspor && tabelAktif === "" && (
             <div>
-              <form onSubmit={() => setEkspor(false)}>
+              <form onSubmit={(e) => eksporHandler(e)}>
                 <input
                   type="text"
                   name="name"
@@ -432,6 +460,8 @@ const Tabel = () => {
           setDataSemuaTabel={setDataSemuaTabel}
         />
       )}
+
+      <Toaster />
     </>
   );
 };

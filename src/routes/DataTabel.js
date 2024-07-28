@@ -1,10 +1,13 @@
 import { useState } from "react";
 import styled from "styled-components";
 import Modal from "../components/Modal";
+import toast from "react-hot-toast";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCircleChevronLeft,
   faCirclePlus,
+  faPenToSquare,
+  faTrashCan,
 } from "@fortawesome/free-solid-svg-icons";
 
 const DataTabel = ({
@@ -49,6 +52,9 @@ const DataTabel = ({
     prevDataSemuaTabel[namaTabel] = newData;
     setDataSemuaTabel(prevDataSemuaTabel);
     closeModal();
+    toast.success("Berhasil menghapus data", {
+      position: "top-right",
+    });
   };
 
   const showTambah = () => {
@@ -83,6 +89,9 @@ const DataTabel = ({
     event.preventDefault();
     tambahData(event.target);
     setTambah(false);
+    toast.success("Berhasil menambahkan data baru", {
+      position: "top-right",
+    });
   };
 
   const submitHandler2 = (event) => {
@@ -95,10 +104,13 @@ const DataTabel = ({
     setSunting(false);
     setSuntingIdx("");
     setDataSunting({});
+    toast.success("Berhasil mengubah data", {
+      position: "top-right",
+    });
   };
 
   return (
-    <div className="px-10 py-16 font-poppins text-black">
+    <div className="px-10 py-16 ml-[300px] font-poppins text-black">
       <div className="mb-[30px] flex items-center gap-2">
         <FontAwesomeIcon
           icon={faCircleChevronLeft}
@@ -134,18 +146,30 @@ const DataTabel = ({
                         </th>
                       ))}
                       <th className="px-6 py-1 font-normal flex gap-2">
-                        <p
-                          className="italic cursor-pointer"
+                        <div
+                          className="flex items-center hover:underline cursor-pointer"
                           onClick={() => suntingData(idx)}
                         >
-                          sunting
-                        </p>
-                        <p
-                          className="italic cursor-pointer"
+                          <FontAwesomeIcon
+                            className="mr-[5px]"
+                            icon={faPenToSquare}
+                          />
+                          <p className="italic text-blue-800 font-medium">
+                            sunting
+                          </p>
+                        </div>
+                        <div
+                          className="flex items-center hover:underline cursor-pointer"
                           onClick={() => openModal(idx)}
                         >
-                          hapus
-                        </p>
+                          <FontAwesomeIcon
+                            className="mr-[5px]"
+                            icon={faTrashCan}
+                          />
+                          <p className="italic text-blue-800 font-medium">
+                            hapus
+                          </p>
+                        </div>
                       </th>
                     </tr>
                   ))}
