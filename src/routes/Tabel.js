@@ -8,6 +8,7 @@ import {
   faCircleMinus,
   faCirclePlus,
   faTableColumns,
+  faTableList,
   faTrashCan,
 } from "@fortawesome/free-solid-svg-icons";
 import { dataTabel, listTabel, strukturTabel } from "./Constant";
@@ -91,7 +92,7 @@ const Tabel = () => {
     setTabelAktif("");
     setStrukturAktif([]);
     toast.success("Berhasil menyimpan atribut tabel", {
-      position: "top-right",
+      position: "bottom-center",
     });
   };
 
@@ -103,7 +104,7 @@ const Tabel = () => {
     });
     setStrukturAktif(newStruktur);
     toast.success("Berhasil menambahkan kolom atribut", {
-      position: "top-right",
+      position: "bottom-center",
     });
   };
 
@@ -112,7 +113,7 @@ const Tabel = () => {
     setStrukturAktif(newStruktur);
     closeModal2();
     toast.success("Berhasil menghapus kolom atribut", {
-      position: "top-right",
+      position: "bottom-center",
     });
   };
 
@@ -129,15 +130,15 @@ const Tabel = () => {
     setData(newData);
     closeModal();
     toast.success("Berhasil menghapus tabel", {
-      position: "top-right",
+      position: "bottom-center",
     });
   };
 
   // Row Tabel
-  const TableRow = ({ namaTabel, openModal, openStrukturTabel }) => {
+  const TableRow = ({ namaTabel, openModal, openStrukturTabel, idx }) => {
     return (
       <>
-        <tr>
+        <tr className={`${idx % 2 === 0 ? "bg-[#ECECEC]" : ""}`}>
           <th className="px-6 py-1 font-normal">
             <p
               className="cursor-pointer font-semibold hover:underline"
@@ -150,6 +151,13 @@ const Tabel = () => {
             {dataSemuaTabel[namaTabel].length}
           </th>
           <th className="px-6 py-1 font-normal flex gap-2">
+            <div
+              className="flex items-center hover:underline cursor-pointer"
+              onClick={() => openDaftarData(namaTabel)}
+            >
+              <FontAwesomeIcon className="mr-[5px]" icon={faTableList} />
+              <p className="italic text-blue-800 font-medium">data</p>
+            </div>
             <div
               className="flex items-center hover:underline cursor-pointer"
               onClick={() => openStrukturTabel(namaTabel)}
@@ -184,8 +192,9 @@ const Tabel = () => {
       setStrukturAktif([{ nama: "", tipe: "", panjang: "" }]);
       setDataSemuaTabel({ ...dataSemuaTabel, [namaTabelBaru]: [] });
       toast.success("Berhasil membuat tabel baru", {
-        position: "top-right",
+        position: "bottom-center",
       });
+      setNamaTabelBaru("");
     }
   };
 
@@ -193,7 +202,7 @@ const Tabel = () => {
     event.preventDefault();
     setEkspor(false);
     toast.success("Berhasil ekspor basis data", {
-      position: "top-right",
+      position: "bottom-center",
     });
   };
 
@@ -221,6 +230,7 @@ const Tabel = () => {
                     {data.map((data, idx) => (
                       <TableRow
                         key={idx}
+                        idx={idx}
                         namaTabel={data.namatabel}
                         openModal={openModal}
                         openStrukturTabel={openStrukturTabel}

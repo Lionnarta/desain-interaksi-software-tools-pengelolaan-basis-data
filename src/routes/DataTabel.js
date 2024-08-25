@@ -53,7 +53,7 @@ const DataTabel = ({
     setDataSemuaTabel(prevDataSemuaTabel);
     closeModal();
     toast.success("Berhasil menghapus data", {
-      position: "top-right",
+      position: "bottom-center",
     });
   };
 
@@ -90,7 +90,7 @@ const DataTabel = ({
     tambahData(event.target);
     setTambah(false);
     toast.success("Berhasil menambahkan data baru", {
-      position: "top-right",
+      position: "bottom-center",
     });
   };
 
@@ -105,7 +105,7 @@ const DataTabel = ({
     setSuntingIdx("");
     setDataSunting({});
     toast.success("Berhasil mengubah data", {
-      position: "top-right",
+      position: "bottom-center",
     });
   };
 
@@ -136,7 +136,10 @@ const DataTabel = ({
                 </thead>
                 <tbody>
                   {dataSemuaTabel[namaTabel].map((data, idx) => (
-                    <tr key={idx}>
+                    <tr
+                      key={idx}
+                      className={`${idx % 2 === 0 ? "bg-[#ECECEC]" : ""}`}
+                    >
                       {dataStruktur[namaTabel].map((struktur, sIdx) => (
                         <th
                           key={idx + "-" + sIdx}

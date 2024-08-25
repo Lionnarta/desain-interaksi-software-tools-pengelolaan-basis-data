@@ -9,8 +9,6 @@ const Tooltips = ({ text, children }) => {
     <div
       className="relative w-[320px] justify-center flex items-center px-[15px] py-[10px] bg-[#D4D4D4] hover:bg-[#ECECEC] transition ease-in-out duration-150 rounded-lg cursor-pointer"
       style={{ boxShadow: "0px 5px 50px 5px rgba(0, 0, 0, 0.05)" }}
-      onMouseEnter={() => setHoverState(true)}
-      onMouseLeave={() => setHoverState(false)}
     >
       {children}
       {hoverState && (
@@ -21,7 +19,12 @@ const Tooltips = ({ text, children }) => {
           {text}
         </p>
       )}
-      <FontAwesomeIcon className="w-[15px] absolute right-[15px]" icon={faCircleInfo} />
+      <FontAwesomeIcon
+        onMouseEnter={() => setHoverState(true)}
+        onMouseLeave={() => setHoverState(false)}
+        className="w-[15px] absolute right-[15px]"
+        icon={faCircleInfo}
+      />
     </div>
   );
 };

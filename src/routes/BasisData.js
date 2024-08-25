@@ -20,7 +20,7 @@ const BasisData = () => {
     setBasisData(event.target.files[0].name);
     sessionStorage.setItem("databaseName", event.target.files[0].name);
     if (event.target.files[0].name !== "") {
-      toast.success("Berhasil impor basis data", { position: "top-right" });
+      toast.success("Berhasil impor basis data", { position: "bottom-center" });
     }
   };
 
@@ -30,8 +30,7 @@ const BasisData = () => {
       setBasisData(namaBasisData + ".db");
       sessionStorage.setItem("databaseName", namaBasisData + ".db");
       toast.success("Berhasil membuat basis data baru", {
-        position: "top-right",
-        duration: 10000,
+        position: "bottom-center",
       });
     } else {
       setBasisData("-");
@@ -66,8 +65,9 @@ const BasisData = () => {
             <Tooltips text={"Masukkan file basis data dengan ektensi *.db"}>
               <input
                 type="file"
-                className="opacity-0 absolute left-0 top-0 right-0 bottom-0 w-full h-full"
+                className="opacity-0 absolute left-0 top-0 right-0 bottom-0 w-full h-full cursor-pointer"
                 onChange={fileHandler}
+                title=""
               />
               <p className="text-xl font-medium mr-[15px]">Impor basis data</p>
             </Tooltips>
