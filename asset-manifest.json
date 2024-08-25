@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/desain-interaksi-software-tools-pengelolaan-basis-data/static/css/main.9769962e.css",
-    "main.js": "/desain-interaksi-software-tools-pengelolaan-basis-data/static/js/main.aa3d4a71.js",
+    "main.js": "/desain-interaksi-software-tools-pengelolaan-basis-data/static/js/main.55a98fbd.js",
     "static/js/453.ab8df4c9.chunk.js": "/desain-interaksi-software-tools-pengelolaan-basis-data/static/js/453.ab8df4c9.chunk.js",
     "index.html": "/desain-interaksi-software-tools-pengelolaan-basis-data/index.html",
     "main.9769962e.css.map": "/desain-interaksi-software-tools-pengelolaan-basis-data/static/css/main.9769962e.css.map",
-    "main.aa3d4a71.js.map": "/desain-interaksi-software-tools-pengelolaan-basis-data/static/js/main.aa3d4a71.js.map",
+    "main.55a98fbd.js.map": "/desain-interaksi-software-tools-pengelolaan-basis-data/static/js/main.55a98fbd.js.map",
     "453.ab8df4c9.chunk.js.map": "/desain-interaksi-software-tools-pengelolaan-basis-data/static/js/453.ab8df4c9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9769962e.css",
-    "static/js/main.aa3d4a71.js"
+    "static/js/main.55a98fbd.js"
   ]
 }
