@@ -8,6 +8,7 @@ import {
   faPlus,
   faTable,
   faTableColumns,
+  faTableList,
   faTrashCan,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -395,8 +396,15 @@ const Dokumentasi = () => {
               </li>
               <li className="mb-[5px]">
                 Klik salah satu{" "}
-                <span className="font-semibold">nama tabel</span> yang datanya
-                akan dilihat
+                <span className="font-semibold">nama tabel</span> atau tombol{" "}
+                <span className="italic text-blue-800 font-medium">
+                  <FontAwesomeIcon
+                    className="mr-[5px] text-black"
+                    icon={faTableList}
+                  />
+                  data
+                </span>{" "}
+                yang datanya akan dilihat
               </li>
               <li className="mb-[5px]">
                 Pengguna dapat melihat data pada tabel
@@ -417,8 +425,15 @@ const Dokumentasi = () => {
               </li>
               <li className="mb-[5px]">
                 Klik salah satu{" "}
-                <span className="font-semibold">nama tabel</span> yang datanya
-                akan ditambahkan
+                <span className="font-semibold">nama tabel</span> atau tombol{" "}
+                <span className="italic text-blue-800 font-medium">
+                  <FontAwesomeIcon
+                    className="mr-[5px] text-black"
+                    icon={faTableList}
+                  />
+                  data
+                </span>{" "}
+                yang datanya akan ditambahkan
               </li>
               <li className="mb-[5px]">
                 Klik tombol <FontAwesomeIcon icon={faCirclePlus} />
@@ -448,8 +463,15 @@ const Dokumentasi = () => {
               </li>
               <li className="mb-[5px]">
                 Klik salah satu{" "}
-                <span className="font-semibold">nama tabel</span> yang datanya
-                akan diubah
+                <span className="font-semibold">nama tabel</span> atau tombol{" "}
+                <span className="italic text-blue-800 font-medium">
+                  <FontAwesomeIcon
+                    className="mr-[5px] text-black"
+                    icon={faTableList}
+                  />
+                  data
+                </span>{" "}
+                yang datanya akan diubah
               </li>
               <li className="mb-[5px]">
                 Klik tombol{" "}
@@ -487,7 +509,14 @@ const Dokumentasi = () => {
               </li>
               <li className="mb-[5px]">
                 Klik salah satu{" "}
-                <span className="font-semibold">nama tabel</span> yang datanya
+                <span className="font-semibold">nama tabel</span> atau tombol{" "}
+                <span className="italic text-blue-800 font-medium">
+                  <FontAwesomeIcon
+                    className="mr-[5px] text-black"
+                    icon={faTableList}
+                  />
+                  data
+                </span>{" "}
                 akan dihapus
               </li>
               <li className="mb-[5px]">
